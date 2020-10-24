@@ -29,7 +29,7 @@ ball_r = [0]*n
 ball_vx = [0]*n
 ball_vy = [0]*n
 ball_c = [RED]*n
-#ball_t = [0]*n
+ball_t = [0]*n
 
 sball_x = [0]*n
 sball_y = [0]*n
@@ -37,7 +37,7 @@ sball_r = [0]*n
 sball_vx = [0]*n
 sball_vy = [0]*n
 sball_c = [RED]*n
-#sball_t = [0]*n
+sball_t = [0]*n
 
 def new_ball(i):
     '''рисует новый шарик '''
@@ -90,7 +90,7 @@ def move_ball(i):
         ball_vy[i] *= -1*randint(5, 14)/10
         ball_y[i] = 599 - ball_r[i]
     ball_t[i] += 1
-    r = randint (0, 150)
+    r = randint (0, 15000)
     if (r<ball_t[i]):
         new_ball(i)
 
@@ -111,10 +111,9 @@ def move_sball(i):
         sball_vy[i] *= -1*randint(5, 14)/10
         sball_y[i] = 599 - sball_r[i]
     sball_t[i] += 1
-    r = randint(0, 200)
+    r = randint(0, 12000)
     if (r < sball_t[i]):
         new_sball(i)
-
 
 def draw(n):
     global ball_x, ball_y, ball_r, ball_c
